@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Vaadin-Package-Version: 1
-Vaadin-Addon: carousel-addon-2.1.2.jar
-Implementation-Vendor: Flowing Code
-Implementation-Title: Carousel Addon
-Implementation-Version: 2.1.2
