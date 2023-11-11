@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Minha Aplicação</title>
+    <link rel="stylesheet" href="./styles/signup.css"> <!-- Inclua a folha de estilo CSS -->
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">
+            <img src="./images/vacinaicon.png" alt="Logo da Aplicação" width="50" height="51">
+        </div>
+        <div class="signup-form">
+            <h2>Crie sua Conta</h2>
+            <form method="post" action="cadastro_de_usuario.jsp">
+                <input type="text" required placeholder="Nome Completo" name="nome_completo" id="nome_completo" size="255" maxlength="255">
+                <input type="email" required placeholder="E-mail" name="email" id="email" size="255" maxlength="255">
+                <input type="text" required placeholder="Endereço" name="endereco" id="endereco" size="255" maxlength="255">
+                <input type="text" required placeholder="CEP" name="cep" id="cep" size="10" maxlength="10">
+                <input type="text" required placeholder="CPF" name="cpf" id="cpf" size="14" maxlength="14">
+                <input type="text" required placeholder="Telefone" name="telefone" id="telefone" size="15" maxlength="15">
+                <input type="password" required placeholder="Senha" name="senha" id="senha" size="255" maxlength="255">
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p>Já tem uma conta? <a href="login-page.html">Faça login</a></p>
+        </div>
+    </div>
+</body>
+</html>
