@@ -28,15 +28,11 @@
     </head>
     <body>
         <h1>Sucesso Login</h1>
-        <p>cpf: <%= session.getAttribute("cpf")%></p>
-        <p>senha: <%= session.getAttribute("senha")%></p>
-
-        
+        <p>cpf: <%= session.getAttribute("cpf")%></p>        
         <p>nome_completo <%= session.getAttribute("nome_completo")%></p>
         <p>email <%= session.getAttribute("email")%></p>
         <p>endereco <%= session.getAttribute("endereco")%></p>
         <p>cep <%= session.getAttribute("cep")%></p>
-        <p>cpfTrue <%= session.getAttribute("cpfTrue")%></p>
         <p>telefone <%= session.getAttribute("telefone")%></p>
        
 

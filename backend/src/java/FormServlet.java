@@ -3,6 +3,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,14 @@ public class FormServlet extends HttpServlet {
         String senha = request.getParameter("senha");
         String cpf = request.getParameter("cpf");
 //        PrintWriter out = response.getWriter();
-        response.setContentType("text/html");
+//        response.setContentType("text/html");
 
-        if (senha != null && cpf != null && senha.equals("123") && cpf.equals("123")) {
+//        if (senha != null && cpf != null && senha.equals("123") && cpf.equals("123")) {
+//            
+//                 } else {
+//            response.sendRedirect(request.getContextPath() + "/webPages/login.jsp?mensagem=SenhaEmailIncorretos");
+//        
+//        }
            
 
             Logger logger = Logger.getLogger("USER PAGE");
@@ -48,6 +54,8 @@ public class FormServlet extends HttpServlet {
             String dbPassword = envVars.get("DB_PASSWORD");
 
             try {
+                PrintWriter out = response.getWriter();
+                response.setContentType("text/html");
                 Connection conecta;
                 PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -56,42 +64,32 @@ public class FormServlet extends HttpServlet {
                 st.setString(1, cpf);
                 st.setString(2, senha);
                 ResultSet rs = st.executeQuery();
-                String nome_completo = rs.getString("nome_completo");
-                String email = rs.getString("email");
-                String endereco = rs.getString("endereco");
-                String cep = rs.getString("cep");
-                String cpfTrue = rs.getString("cpf");
-                String telefone = rs.getString("telefone");
-                HttpSession hs = request.getSession();
-                hs.setAttribute("cpf", cpf);
-                hs.setAttribute("senha", senha);
-                hs.setAttribute("nome_completo", nome_completo);
-                hs.setAttribute("email", email);
-                hs.setAttribute("endereco", endereco);
-                hs.setAttribute("cep", cep);
-                hs.setAttribute("cpfTrue", cpfTrue);
-                hs.setAttribute("telefone", telefone);
-                PrintWriter out = response.getWriter();
-                response.setContentType("text/html");
-                
-                System.out.println("AAAAAAASD");
-                System.out.println(telefone);
-
-
-
-
-                                
 
 
                 // Processar o ResultSet conforme necessário
-                while (rs.next()) {
-                    // Implemente a lógica de processamento aqui
-                }
+                if (rs.next()) {
+                   String nome_completo = rs.getString("nome_completo");
+                   String email = rs.getString("email");
+                   String endereco = rs.getString("endereco");
+                   String cep = rs.getString("cep");
+                   String cpfTrue = rs.getString("cpf");
+                   String telefone = rs.getString("telefone");
+                   HttpSession hs = request.getSession();
+                   hs.setAttribute("cpf", cpf);
+                   hs.setAttribute("senha", senha);
+                   hs.setAttribute("nome_completo", nome_completo);
+                   hs.setAttribute("email", email);
+                   hs.setAttribute("endereco", endereco);
+                   hs.setAttribute("cep", cep);
+                   hs.setAttribute("cpfTrue", cpfTrue);
+                   hs.setAttribute("telefone", telefone);
 
-                // Fecha a conexão e recursos
-//                rs.close();
-//                st.close();
-//                conecta.close();
+                   System.out.println("AAAAAAASD");
+                   System.out.println(telefone);
+                    // Implemente a lógica de processamento aqui
+                    RequestDispatcher rd = request.getRequestDispatcher("../webPages/sucess.jsp");
+                    rd.forward(request, response);
+                }
                 response.sendRedirect("webPages/sucess.jsp");
 
 
@@ -99,9 +97,8 @@ public class FormServlet extends HttpServlet {
                 logger.severe("Database error: " + e.getMessage());
             }
 
-        } else {
-            response.sendRedirect(request.getContextPath() + "/webPages/login.jsp?mensagem=SenhaEmailIncorretos");
-        }
+   
+            response.sendRedirect("webPages/sucess.jsp");
 
     }
 }
