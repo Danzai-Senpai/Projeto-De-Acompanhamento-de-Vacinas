@@ -46,7 +46,7 @@
 				
                       
                 <input type="password" placeholder="Password" name="senha">
-                <button type="submit">Login</button>
+                <button type="submit" value="Login">Login</button>
 <!--                <a href = "parentProfile.html">Login</a>-->
 			
             </form>
