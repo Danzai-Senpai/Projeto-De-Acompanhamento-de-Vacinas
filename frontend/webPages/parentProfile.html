@@ -1,60 +1,348 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Profile Page</title>
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="../styles/parentProfile.css" />
-  </head>
-  <body>
-    <div class="header__wrapper">
-      <header></header>
-      <div class="cols__container">
-        <div class="left__col">
-          <div class="img__container">
-            <img src="../images/woman.png" alt="Anna Smith" />
-            <span></span>
-          </div>
-          <h2>Anna Clara</h2>
-          <p>Mãe</p>
-          <p>32 anos</p>
 
-          <ul class="about">
-			<li><span></span></li>
-            <li><span>2</span>Filhos</li>
-			<li><span></span></li>
-          </ul>
+<head>
 
-          <div class="content">
-            <p>
-              Mãe de Enzo, de 3 anos, e de Maria de 8 meses.
-              Enzo nasceu com uma condição rara que pode influenciar se deve tomar uma vacina ou não.
-              (Resumo sobre a mãe e seus filhos)
-            </p>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-          </div>
+  <script src="../scripts/main.js"></script>
+
+  <title>VacinaKids - Responsavel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="../styles/parentProfile.css" id="profileStyles" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="../styles/lightbox.css">
+
+</head>
+
+<body>
+
+  <div id="overlay"></div>
+  <div class="header__wrapper">
+    <header></header>
+    <div class="cols__container">
+      <div class="left__col">
+        <div class="img__container">
+          <img src="../images/woman.png" alt="Anna Smith" />
+          <span></span>
         </div>
-        <div class="right__col">
-          <nav>
-            <ul>
-              <li><a href="">crianças</a></li>
-              <li><a href="">noticias</a></li>
-              <li><a href="">contato</a></li>
-            </ul>
-          </nav>
 
+        <h2>Anna Clara</h2>
+        <p>Mãe</p>
+        <p>32 anos</p>
 
-		  
+        <ul class="about">
+          <li><span></span></li>
+          <li><span>2</span>Filhos</li>
+          <li><span></span></li>
+        </ul>
+
+        <div class="content">
+          <p>
+            Mãe de Enzo, de 3 anos, e de Maria de 8 meses.
+            Enzo nasceu com uma condição rara que pode influenciar se deve tomar uma vacina ou não.
+            (Resumo sobre a mãe e seus filhos)
+          </p>
         </div>
       </div>
+
+      <div class="right__col">
+        <nav>
+          <ul>
+            <li><a href="#" id="criancasLink">crianças</a></li>
+            <li><a href="#" id="noticiasLink">noticias</a></li>
+            <li><a href="#" id="contatoLink">contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="criancas">
+          <section>
+    
+            <div class="swiper mySwiper container">
+              <div class="swiper-wrapper content">
+        
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Ally Pearson</span>
+                      <span class="profession">Web Developer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Dominic Wells</span>
+                      <span class="profession">Software Engineer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Kylie Smith</span>
+                      <span class="profession">UX/UI Desinger</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Stephanie Xia</span>
+                      <span class="profession">Backend Developer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Jordan Tapp</span>
+                      <span class="profession">Network Engineer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Caroline Parker</span>
+                      <span class="profession">Systems Analyst</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Maddie Crox</span>
+                      <span class="profession">Frontend Developer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Simone Mitchell</span>
+                      <span class="profession">Java Developer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="../images/boy.jpg" alt="">
+                    </div>
+        
+                    <div class="name-profession">
+                      <span class="name">Heather Cornwell</span>
+                      <span class="profession">Systems Engineer</span>
+                    </div>
+        
+                    <div class="button">
+                      <button class="aboutMe">Acessar</button>
+                    </div>
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+  
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+  
+          </section>
+        </div>
+
+        <div class="photos">
+          <div class="box">
+      
+            <div class="dream">
+      
+              <a href="../images/test/istockphoto-1322277517-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-1322277517-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" alt="">
+              </a>
+              <a href="../images/test/download.jpeg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/download.jpeg" alt="">
+              </a>
+              <a href="../images/test/Landscape-Color.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Landscape-Color.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-517188688-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-517188688-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/tree-736885_1280.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/tree-736885_1280.jpg" alt="">
+              </a>
+              <a href="../images/test/Photography-Camera-HD-Wallpaper1.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Photography-Camera-HD-Wallpaper1.jpg" alt="">
+              </a>
+            </div>
+            <div class="dream">
+              <a href="../images/test/download.jpeg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/download.jpeg" alt="">
+              </a>
+              <a href="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-1322277517-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-1322277517-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-517188688-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-517188688-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/Landscape-Color.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Landscape-Color.jpg" alt="">
+              </a>
+              <a href="../images/test/Photography-Camera-HD-Wallpaper1.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Photography-Camera-HD-Wallpaper1.jpg" alt="">
+              </a>
+              <a href="../images/test/tree-736885_1280.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/tree-736885_1280.jpg" alt="">
+              </a>
+            </div>
+            <div class="dream">
+              <a href="../images/test/tree-736885_1280.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/tree-736885_1280.jpg" alt="">
+              </a>
+              <a href="../images/test/Photography-Camera-HD-Wallpaper1.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Photography-Camera-HD-Wallpaper1.jpg" alt="">
+              </a>
+              <a href="../images/test/Landscape-Color.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Landscape-Color.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-517188688-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-517188688-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-1322277517-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-1322277517-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" alt="">
+              </a>
+              <a href="../images/test/download.jpeg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/download.jpeg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contatos">
+
+        </div>
+
+      </div>
     </div>
-  </body>
+  </div>
+
+  <script>
+    // main.js
+    document.getElementById('criancasLink').addEventListener('click', function () {
+      showSection('criancas');
+    });
+
+    document.getElementById('noticiasLink').addEventListener('click', function () {
+      showSection('noticias');
+    });
+
+    document.getElementById('contatoLink').addEventListener('click', function () {
+      showSection('contato');
+    });
+
+    function showSection(section) {
+      document.getElementById('overlay').style.display = 'block';
+
+      document.querySelector('.criancas').style.display = 'none';
+      document.querySelector('.photos').style.display = 'none';
+
+      if (section === 'criancas') {
+        document.querySelector('.criancas').style.display = 'block';
+        document.getElementById('profileStyles').setAttribute('href', '../styles/parentProfile.css');
+      } else if (section === 'noticias') {
+        document.querySelector('.photos').style.display = 'grid';
+        document.getElementById('profileStyles').setAttribute('href', '../styles/parentProfileGrid.css');
+      }
+
+      // Remover a linha abaixo
+      // document.getElementById('overlay').style.display = 'background:white;';
+    }
+
+    window.onload = function () {
+      showSection('criancas');
+    };
+  </script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="../scripts/script.js"></script>
+  <script src="../scripts/lightbox-plus-jquery.min.js"></script>
+
+</body>
+
 </html>

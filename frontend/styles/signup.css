@@ -9,6 +9,28 @@ body {
     height: 100vh;
 }
 
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adiciona centralização horizontal */
+    width: 107%;
+}
+
+.flex-container label {
+    font-size: 14px; /* Tamanho da fonte pequeno */
+    font-weight: 600;
+    opacity: 0.5;    /* Opacidade um pouco transparente */
+    margin-left: 0;
+    margin-right: 10px; /* Adiciona espaço à direita do label */
+    display: inline-block; /* Coloca o label e o input na mesma linha */
+    width: 100%;
+}
+
+#data_nascimento {
+    width: 100%; /* Ocupa todo o espaço disponível */
+}
+
+
 .signup-container {
     background-color: #fff;
     border-radius: 8px;
@@ -35,6 +57,14 @@ body {
 .signup-form h2 {
     font-size: 18px;
     margin: 10px 0;
+}
+
+.signup-form select {
+    width: 107%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .signup-form input {

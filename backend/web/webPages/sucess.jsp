@@ -20,7 +20,9 @@
 <%@ page import="java.io.InputStreamReader" %>
 <%@ page import="java.io.FileInputStream" %>
 <%@ page import="java.io.FileNotFoundException" %>
-<html lang="pt-br">
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -34,6 +36,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link rel="stylesheet" href="../styles/parentProfile.css" id="profileStyles" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="../styles/lightbox.css">
 
 </head>
 
@@ -48,74 +51,24 @@
           <img src="../images/woman.png" alt="Anna Smith" />
           <span></span>
         </div>
-     <ul class="about">
-<!--                                  <li><span></span></li>
-                      <li><span>2</span>Filhos</li>
-                                  <li><span></span></li>-->
-                    </ul>
-<!-- Add more fields as needed -->
-                    <h2><%= session.getAttribute("nome_completo")%></h2>
-<!--                    <p>32 anos</p>-->
 
-                    <ul class="about">
-<!--                                  <li><span></span></li>
-                      <li><span>2</span>Filhos</li>
-                                  <li><span></span></li>-->
-                    </ul>
+        <h2><%= session.getAttribute("nome_completo")%></h2>
+        <p>Mãe</p>
+        <p>32 anos</p>
 
-                    <div class="content">
-<!--                      <p>
-                        Mãe de Enzo, de 3 anos, e de Maria de 8 meses.
-                        Enzo nasceu com uma condição rara que pode influenciar se deve tomar uma vacina ou não.
-                        (Resumo sobre a mãe e seus filhos)
-                      </p>-->
-                    <div class="userData">
-                        <label>Email:</label>
-                        <p><%= session.getAttribute("email")%></p>
-                        
-                    <ul class="about">
-<!--                                  <li><span></span></li>
-                      <li><span>2</span>Filhos</li>
-                                  <li><span></span></li>-->
-                    </ul>
+        <ul class="about">
+          <li><span></span></li>
+          <li><span>2</span>Filhos</li>
+          <li><span></span></li>
+        </ul>
 
-                        <label>Endereço:</label>
-                        <p><%= session.getAttribute("endereco")%></p>
-                        
-                    <ul class="about">
-<!--                                  <li><span></span></li>
-                      <li><span>2</span>Filhos</li>
-                                  <li><span></span></li>-->
-                    </ul>
-
-                        <label>CEP:</label>
-                        <p><%= session.getAttribute("cep")%></p>
-                        
-                    <ul class="about">
-<!--                                  <li><span></span></li>
-                      <li><span>2</span>Filhos</li>
-                                  <li><span></span></li>-->
-                    </ul>
-
-                        <label>CPF:</label>
-                        <p><%= session.getAttribute("cpf")%></p>
-                        
-                    <ul class="about">
-<!--                                  <li><span></span></li>
-                      <li><span>2</span>Filhos</li>
-                                  <li><span></span></li>-->
-                    </ul>
-
-                        <label>Telefone:</label>
-                        <p><%= session.getAttribute("telefone")%></p>
-                    </div>
-                   
-
-
-
-
-                    </div>
-     
+        <div class="content">
+          <p>
+            Mãe de Enzo, de 3 anos, e de Maria de 8 meses.
+            Enzo nasceu com uma condição rara que pode influenciar se deve tomar uma vacina ou não.
+            (Resumo sobre a mãe e seus filhos)
+          </p>
+        </div>
       </div>
 
       <div class="right__col">
@@ -289,7 +242,79 @@
         </div>
 
         <div class="photos">
-          
+          <div class="box">
+      
+            <div class="dream">
+      
+              <a href="../images/test/istockphoto-1322277517-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-1322277517-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" alt="">
+              </a>
+              <a href="../images/test/download.jpeg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/download.jpeg" alt="">
+              </a>
+              <a href="../images/test/Landscape-Color.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Landscape-Color.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-517188688-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-517188688-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/tree-736885_1280.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/tree-736885_1280.jpg" alt="">
+              </a>
+              <a href="../images/test/Photography-Camera-HD-Wallpaper1.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Photography-Camera-HD-Wallpaper1.jpg" alt="">
+              </a>
+            </div>
+            <div class="dream">
+              <a href="../images/test/download.jpeg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/download.jpeg" alt="">
+              </a>
+              <a href="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-1322277517-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-1322277517-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-517188688-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-517188688-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/Landscape-Color.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Landscape-Color.jpg" alt="">
+              </a>
+              <a href="../images/test/Photography-Camera-HD-Wallpaper1.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Photography-Camera-HD-Wallpaper1.jpg" alt="">
+              </a>
+              <a href="../images/test/tree-736885_1280.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/tree-736885_1280.jpg" alt="">
+              </a>
+            </div>
+            <div class="dream">
+              <a href="../images/test/tree-736885_1280.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/tree-736885_1280.jpg" alt="">
+              </a>
+              <a href="../images/test/Photography-Camera-HD-Wallpaper1.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Photography-Camera-HD-Wallpaper1.jpg" alt="">
+              </a>
+              <a href="../images/test/Landscape-Color.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/Landscape-Color.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-517188688-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-517188688-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/istockphoto-1322277517-612x612.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/istockphoto-1322277517-612x612.jpg" alt="">
+              </a>
+              <a href="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/gvQ9NhQP8wbbM32jXy4V3j.jpg" alt="">
+              </a>
+              <a href="../images/test/download.jpeg" data-lightbox="models" data-title="Caption1">
+                <img src="../images/test/download.jpeg" alt="">
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="contatos">
@@ -301,43 +326,45 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Função para mostrar a seção de crianças e trocar a folha de estilo
-      function showChildrenSection() {
-        document.querySelector('.criancas').style.display = 'block';
-        document.querySelector('.photos').style.display = 'none';
-        document.querySelector('.contatos').style.display = 'none';
-        document.getElementById('profileStyles').href = '../styles/parentProfile.css';
-      }
-  
-      // Função para mostrar a seção de notícias, trocar a folha de estilo e exibir a seção de fotos
-      function showNewsSection() {
-        document.querySelector('.criancas').style.display = 'none';
-        document.querySelector('.photos').style.display = 'block';
-        document.querySelector('.contatos').style.display = 'none';
-        document.getElementById('profileStyles').href = '../styles/parentProfileGrid.css';
-      }
-  
-      // Função para mostrar a seção de contatos, trocar a folha de estilo e esconder a seção de fotos
-      function showContactsSection() {
-        document.querySelector('.criancas').style.display = 'none';
-        document.querySelector('.photos').style.display = 'none';
-        document.querySelector('.contatos').style.display = 'block';
-        document.getElementById('profileStyles').href = '../styles/parentProfileGrid.css';
-      }
-  
-      // Adiciona event listeners aos links do menu
-      document.getElementById('criancasLink').addEventListener('click', showChildrenSection);
-      document.getElementById('noticiasLink').addEventListener('click', showNewsSection);
-      document.getElementById('contatoLink').addEventListener('click', showContactsSection);
-  
-      // Mostra a seção de crianças por padrão ao carregar a página
-      showChildrenSection();
+    // main.js
+    document.getElementById('criancasLink').addEventListener('click', function () {
+      showSection('criancas');
     });
-  </script>  
+
+    document.getElementById('noticiasLink').addEventListener('click', function () {
+      showSection('noticias');
+    });
+
+    document.getElementById('contatoLink').addEventListener('click', function () {
+      showSection('contato');
+    });
+
+    function showSection(section) {
+      document.getElementById('overlay').style.display = 'block';
+
+      document.querySelector('.criancas').style.display = 'none';
+      document.querySelector('.photos').style.display = 'none';
+
+      if (section === 'criancas') {
+        document.querySelector('.criancas').style.display = 'block';
+        document.getElementById('profileStyles').setAttribute('href', '../styles/parentProfile.css');
+      } else if (section === 'noticias') {
+        document.querySelector('.photos').style.display = 'grid';
+        document.getElementById('profileStyles').setAttribute('href', '../styles/parentProfileGrid.css');
+      }
+
+      // Remover a linha abaixo
+      // document.getElementById('overlay').style.display = 'background:white;';
+    }
+
+    window.onload = function () {
+      showSection('criancas');
+    };
+  </script>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="../scripts/script.js"></script>
+  <script src="../scripts/lightbox-plus-jquery.min.js"></script>
 
 </body>
 

@@ -15,10 +15,39 @@
             <h2>Crie sua Conta</h2>
             <form method="post" action="../cadastro_de_usuario.jsp">
                 <input type="text" required placeholder="Nome Completo" name="nome_completo" id="nome_completo" size="255" maxlength="255">
+                <div class="flex-container">
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" required name="data_nascimento" id="data_nascimento">
+                </div>
+                <select name="estado_familiar" id="estado_familiar" required>
+                    <option value="" disabled selected hidden>Estado Familiar</option>
+                    <option value="pai">Pai</option>
+                    <option value="mae">Mãe</option>
+                    <option value="avo">Avô</option>
+                    <option value="ava">Avó</option>
+                    <option value="guardiao">Guardião Legal</option>
+                    <option value="tutor">Tutor</option>
+                    <option value="padrinho">Padrinho</option>
+                    <option value="madrinha">Madrinha</option>
+                    <option value="cuidador">Cuidador</option>
+                </select>
                 <input type="email" required placeholder="E-mail" name="email" id="email" size="255" maxlength="255">
                 <input type="text" required placeholder="Endereço" name="endereco" id="endereco" size="255" maxlength="255">
                 <input type="text" required placeholder="CEP" name="cep" id="cep" size="10" maxlength="10">
                 <input type="text" required placeholder="CPF" name="cpf" id="cpf" size="14" maxlength="14">
+                <script>
+                    const cpfInput = document.getElementById('cpf');
+                    cpfInput.addEventListener('input', function (e) {
+                        let value = e.target.value;
+                        // Remove qualquer caractere que não seja número
+                        value = value.replace(/\D/g, '');
+                        // Adiciona os pontos e hífen na formatação do CPF
+                        if (value.length <= 11) {
+                            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                        }
+                        e.target.value = value;
+                    });
+                </script>
                 <input type="text" required placeholder="Telefone" name="telefone" id="telefone" size="15" maxlength="15">
                 <input type="password" required placeholder="Senha" name="senha" id="senha" size="255" maxlength="255">
                 <button type="submit">Cadastrar</button>

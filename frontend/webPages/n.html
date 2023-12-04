@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="../scripts/main.js"></script>
+  <title>VacinaKids - Responsavel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="../styles/parentProfile.css" id="profileStyles" />
+</head>
+<body>
+  <div id="overlay"></div>
+  <div class="header__wrapper">
+    <header></header>
+    <div class="cols__container">
+      <div class="left__col">
+        <div class="img__container">
+          <img src="../images/woman.png" alt="Anna Smith" />
+          <span></span>
+        </div>
+        <h2>Anna Clara</h2>
+        <p>Mãe</p>
+        <p>32 anos</p>
+        <ul class="about">
+          <li><span></span></li>
+          <li><span>2</span>Filhos</li>
+          <li><span></span></li>
+        </ul>
+        <div class="content">
+          <p>
+            Mãe de Enzo, de 3 anos, e de Maria de 8 meses.
+            Enzo nasceu com uma condição rara que pode influenciar se deve tomar uma vacina ou não.
+            (Resumo sobre a mãe e seus filhos)
+          </p>
+        </div>
+      </div>
+      <div class="right__col">
+        <nav>
+          <ul>
+            <li><a href="#" id="criancasLink">crianças</a></li>
+            <li><a href="#" id="noticiasLink">noticias</a></li>
+            <li><a href="#" id="contatoLink">contato</a></li>
+          </ul>
+        </nav>
+        <div class="criancas" id="childrenContainer"></div>
+        <div class="photos">
+          <img src="../images/orange_bg.jpg" alt="Photo" />
+          <img src="../images/orange_bg.jpg" alt="Photo" />
+          <img src="../images/orange_bg.jpg" alt="Photo" />
+          <img src="../images/orange_bg.jpg" alt="Photo" />
+          <img src="../images/orange_bg.jpg" alt="Photo" />
+          <img src="../images/orange_bg.jpg" alt="Photo" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // main.js
+    document.getElementById('criancasLink').addEventListener('click', function () {
+      showSection('criancas');
+    });
+
+    document.getElementById('noticiasLink').addEventListener('click', function () {
+      showSection('noticias');
+    });
+
+    document.getElementById('contatoLink').addEventListener('click', function () {
+      showSection('contato');
+    });
+
+    function showSection(section) {
+      document.getElementById('overlay').style.display = 'block';
+
+      document.querySelector('.criancas').style.display = 'none';
+      document.querySelector('.photos').style.display = 'none';
+
+      if (section === 'criancas') {
+        document.querySelector('.criancas').style.display = 'block';
+        document.getElementById('profileStyles').setAttribute('href', '../styles/parentProfile.css');
+      } else if (section === 'noticias') {
+        document.querySelector('.photos').style.display = 'grid';
+        document.getElementById('profileStyles').setAttribute('href', '../styles/parentProfileGrid.css');
+      }
+
+      // Remover a linha abaixo
+      // document.getElementById('overlay').style.display = 'background:white;';
+    }
+
+    window.onload = function () {
+      showSection('criancas');
+    };
+  </script>
+</body>
+</html>
