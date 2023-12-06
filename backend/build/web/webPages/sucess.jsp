@@ -214,19 +214,13 @@
                     </div>
                   </div>
                 </div>
+                
                 <div class="swiper-slide card">
                   <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Heather Cornwell</span>
-                      <span class="profession">Systems Engineer</span>
-                    </div>
+                    <img src="../images/Circle.png" id="sign_child" alt="" width="240" height="240">
         
                     <div class="button">
-                      <button class="aboutMe">Acessar</button>
+                        <button class="aboutMe"><a href="signup-child.html">Cadastrar</a></button>
                     </div>
                   </div>
                 </div>
@@ -369,3 +363,5 @@
 </body>
 
 </html>
+
+

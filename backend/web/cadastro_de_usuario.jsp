@@ -91,9 +91,8 @@
     st.setString(6, cpf);
     st.setString(7, telefone);
     st.setString(8, senha);
-    st.setString(9, estadoFamiliar); // Adicione o estado_familiar ao PreparedStatement
+    st.setString(9, estadoFamiliar); 
     
-    // Correção: use setDate para coluna do tipo DATE
     java.sql.Date sqlDate = java.sql.Date.valueOf(dataNascimento);
     st.setDate(10, sqlDate);
 
