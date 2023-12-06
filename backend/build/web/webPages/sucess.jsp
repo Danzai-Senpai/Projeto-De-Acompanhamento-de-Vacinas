@@ -53,8 +53,9 @@
         </div>
 
         <h2><%= session.getAttribute("nome_completo")%></h2>
+
         <p><%= session.getAttribute("estadoFamiliar") %></p>
-        
+
 
         <p>
             <% 
@@ -87,7 +88,6 @@
                 }
         %>
     </p>
-
         <p><span id="idadeUsuario"></span> anos</p>
 
         <ul class="about">

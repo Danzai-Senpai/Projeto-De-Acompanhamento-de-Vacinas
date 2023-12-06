@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -55,30 +56,57 @@ public class NewServlet extends HttpServlet {
             String data_nascimento_crianca = request.getParameter("data_nascimento_crianca");
 
             String insertCriancaQuery = "INSERT INTO crianca (cpf_crianca, nome_crianca, data_nascimento) VALUES (?, ?, ?)";
-            String insertRelacaoQuery = "INSERT INTO relacao (id_usuario) VALUES (?)";
+            String insertUsuarioCriancaQuery = "INSERT INTO usuarios_crianca (id_usuario, id_child) VALUES (?, ?)";
 
-            try (PreparedStatement stCrianca = connection.prepareStatement(insertCriancaQuery);
-                 PreparedStatement stRelacao = connection.prepareStatement(insertRelacaoQuery)) {
+            try (PreparedStatement stCrianca = connection.prepareStatement(insertCriancaQuery, PreparedStatement.RETURN_GENERATED_KEYS);
+                 PreparedStatement stUsuarioCrianca = connection.prepareStatement(insertUsuarioCriancaQuery)) {
 
                 // Setar parâmetros para o PreparedStatement stCrianca
                 stCrianca.setString(1, cpf_crianca);
                 stCrianca.setString(2, nome_crianca);
-//                stCrianca.setString(3, id_pai);
                 stCrianca.setString(3, data_nascimento_crianca);
 
                 // Executar a consulta de inserção na tabela crianca
-                stCrianca.executeUpdate();
+                int affectedRows = stCrianca.executeUpdate();
 
-                int id_pai = Integer.parseInt(id_paiString);
+                if (affectedRows > 0) {
+                    // Obtém o ID gerado automaticamente da criança
+                    try (ResultSet generatedKeys = stCrianca.getGeneratedKeys()) {
+                        if (generatedKeys.next()) {
+                            int id_crianca = generatedKeys.getInt(1);
 
-//              stRelacao.setString(1, "valor_id_relacao");  // Substitua "valor_id_relacao" pelo valor correto
-//              stRelacao.setString(2, "valor_id_usuario");  // Substitua "valor_id_usuario" pelo valor correto
-                stRelacao.setInt(1, id_pai);
-                stRelacao.executeUpdate();
+                            // Insere na tabela usuarios_crianca
+                            int id_pai = Integer.parseInt(id_paiString.trim());
+                            stUsuarioCrianca.setInt(1, id_pai);
+                            stUsuarioCrianca.setInt(2, id_crianca);
+                            int usuarioCriancaAffectedRows = stUsuarioCrianca.executeUpdate();
 
+                            if (usuarioCriancaAffectedRows > 0) {
+                                logger.info("Cadastro realizado com sucesso.");
+                                System.out.println("Cadastro realizado com sucesso na tabela crianca.");
+                                System.out.println("Cadastro realizado com sucesso na tabela usuarios_crianca.");
+                            } else {
+                                logger.warning("Falha ao cadastrar na tabela usuarios_crianca.");
+                                System.out.println("Falha ao cadastrar na tabela usuarios_crianca.");
+                            }
+                        } else {
+                            logger.warning("Falha ao obter o ID gerado da criança.");
+                            System.out.println("Falha ao obter o ID gerado da criança.");
+                        }
+                    }
+                } else {
+                    logger.warning("Falha ao cadastrar a criança.");
+                    System.out.println("Falha ao cadastrar na tabela crianca.");
+                }
             }
         } catch (SQLException e) {
             logger.severe("Database error: " + e.getMessage());
+            e.printStackTrace();
+
+            // Redirecionamento de volta à página anterior ou página de erro
+            request.setAttribute("error_message", "Erro no banco de dados: " + e.getMessage());
+            request.getRequestDispatcher("/pagina_de_erro.jsp").forward(request, response);
+            return;  // Importante retornar para evitar a execução do código abaixo
         }
     }
 
@@ -99,4 +127,3 @@ public class NewServlet extends HttpServlet {
         return "Short description";
     }
 }
-
