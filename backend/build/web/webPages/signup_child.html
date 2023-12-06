@@ -13,7 +13,7 @@
         </div>
         <div class="signup-form">
             <h2>Crie sua Conta</h2>
-            <form method="post" action="../cadastro_de_usuario.jsp">
+            <form method="post" action="../CadastrarCriancaServlet">
                 
                 <script>
                     const cpfInput = document.getElementById('cpf');
@@ -28,6 +28,15 @@
                         e.target.value = value;
                     });
                 </script>
+                
+                <%
+                int idPai = request.getParameter("id");
+                %>
+
+                <!-- Exibindo o valor do parâmetro "id" na página -->
+                <p>ID recebido: <%= idPai %></p>
+
+
                 
                 <input type="text" required placeholder="Nome da Criança" name="nome_crianca" id="nome_crianca" size="255" maxlength="255">
                 <div class="flex-container">

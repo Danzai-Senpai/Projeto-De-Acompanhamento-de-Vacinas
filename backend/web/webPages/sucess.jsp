@@ -53,6 +53,10 @@
         </div>
 
         <h2><%= session.getAttribute("nome_completo")%></h2>
+
+        <p><%= session.getAttribute("estadoFamiliar") %></p>
+
+
         <p>
             <% 
                 String estadoFamiliar = (String) session.getAttribute("estadoFamiliar");
@@ -248,9 +252,15 @@
                 <div class="swiper-slide card">
                   <div class="card-content">
                     <img src="../images/Circle.png" id="sign_child" alt="" width="240" height="240">
-        
+                                        <%
+                     // Recupere o valor do atributo "id" da sessão
+                     int idPai = (int)session.getAttribute("id");
+                     %>
+
+                     <!-- Exibindo o valor do atributo "id" na página -->
+                     <p><%= idPai %></p>
                     <div class="button">
-                        <button class="aboutMe"><a href="signup_child.html">Cadastrar</a></button>
+                        <button class="aboutMe"><a href="signup_child.jsp?id=<%= idPai %>">Cadastrar</a></button>
                     </div>
                   </div>
                 </div>

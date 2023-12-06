@@ -68,6 +68,7 @@ public class FormServlet extends HttpServlet {
 
                 // Processar o ResultSet conforme necessário
                 if (rs.next()) {
+                   int id = rs.getInt("id");
                    String nome_completo = rs.getString("nome_completo");
                    String email = rs.getString("email");
                    String endereco = rs.getString("endereco");
@@ -78,6 +79,7 @@ public class FormServlet extends HttpServlet {
                    String dataNascimento = rs.getString("data_nascimento");
                    
                    HttpSession hs = request.getSession();
+                   hs.setAttribute("id", id);
                    hs.setAttribute("cpf", cpf);
                    hs.setAttribute("senha", senha);
                    hs.setAttribute("nome_completo", nome_completo);
