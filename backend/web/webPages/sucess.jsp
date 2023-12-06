@@ -53,9 +53,41 @@
         </div>
 
         <h2><%= session.getAttribute("nome_completo")%></h2>
-        <p><%= session.getAttribute("estadoFamiliar") %></p>
-        <p><%= session.getAttribute("id") %></p>
 
+        <p><%= session.getAttribute("estadoFamiliar") %></p>
+
+
+        <p>
+            <% 
+                String estadoFamiliar = (String) session.getAttribute("estadoFamiliar");
+                
+                if ("mae".equals(estadoFamiliar)) {
+                    out.println("Mãe");
+                } else if ("pai".equals(estadoFamiliar)) {
+                    out.println("Pai");
+                } else if ("ava".equals(estadoFamiliar)) {
+                    out.println("Avó");
+                } else if ("avo".equals(estadoFamiliar)) {
+                    out.println("Avó");
+                } else if ("padrinho".equals(estadoFamiliar)) {
+                    out.println("Padrinho");
+                } else if ("madrinha".equals(estadoFamiliar)) {
+                    out.println("Madrinha");
+                } else if ("tio".equals(estadoFamiliar)) {
+                    out.println("Tio");
+                } else if ("tia".equals(estadoFamiliar)) {
+                    out.println("Tia");
+                } else if ("guardiao".equals(estadoFamiliar)) {
+                    out.println("Guardião Legal");
+                } else if ("tutor".equals(estadoFamiliar)) {
+                    out.println("Tutor");
+                } else if ("cuidador".equals(estadoFamiliar)) {
+                    out.println("Cuidador");
+                } else {
+                    out.println("Outro Estado Familiar");
+                }
+        %>
+    </p>
         <p><span id="idadeUsuario"></span> anos</p>
 
         <ul class="about">
