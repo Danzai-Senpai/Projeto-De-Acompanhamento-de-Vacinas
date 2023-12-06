@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+#sign_child {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
 body {
   width: 100%;
   margin: 0;

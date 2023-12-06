@@ -53,10 +53,7 @@
         </div>
 
         <h2><%= session.getAttribute("nome_completo")%></h2>
-
-        <p><%= session.getAttribute("estadoFamiliar") %></p>
-
-
+        
         <p>
             <% 
                 String estadoFamiliar = (String) session.getAttribute("estadoFamiliar");
@@ -87,7 +84,8 @@
                     out.println("Outro Estado Familiar");
                 }
         %>
-    </p>
+        </p>
+        
         <p><span id="idadeUsuario"></span> anos</p>
 
         <ul class="about">
@@ -127,8 +125,8 @@
                     </div>
         
                     <div class="name-profession">
-                      <span class="name">Ally Pearson</span>
-                      <span class="profession">Web Developer</span>
+                      <span class="name">Enzo Silva</span>
+                      <span class="profession">3 anos</span>
                     </div>
         
                     <div class="button">
@@ -139,108 +137,12 @@
                 <div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="../images/boy.jpg" alt="">
+                      <img src="../images/girl.jpg" alt="">
                     </div>
         
                     <div class="name-profession">
-                      <span class="name">Dominic Wells</span>
-                      <span class="profession">Software Engineer</span>
-                    </div>
-        
-                    <div class="button">
-                      <button class="aboutMe">Acessar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Kylie Smith</span>
-                      <span class="profession">UX/UI Desinger</span>
-                    </div>
-        
-                    <div class="button">
-                      <button class="aboutMe">Acessar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Stephanie Xia</span>
-                      <span class="profession">Backend Developer</span>
-                    </div>
-        
-                    <div class="button">
-                      <button class="aboutMe">Acessar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Jordan Tapp</span>
-                      <span class="profession">Network Engineer</span>
-                    </div>
-        
-                    <div class="button">
-                      <button class="aboutMe">Acessar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Caroline Parker</span>
-                      <span class="profession">Systems Analyst</span>
-                    </div>
-        
-                    <div class="button">
-                      <button class="aboutMe">Acessar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Maddie Crox</span>
-                      <span class="profession">Frontend Developer</span>
-                    </div>
-        
-                    <div class="button">
-                      <button class="aboutMe">Acessar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                      <img src="../images/boy.jpg" alt="">
-                    </div>
-        
-                    <div class="name-profession">
-                      <span class="name">Simone Mitchell</span>
-                      <span class="profession">Java Developer</span>
+                      <span class="name">Maria Silva</span>
+                      <span class="profession">8 meses</span>
                     </div>
         
                     <div class="button">
@@ -251,17 +153,17 @@
                 
                 <div class="swiper-slide card">
                   <div class="card-content">
-                    <img src="../images/Circle.png" id="sign_child" alt="" width="240" height="240">
-                                        <%
-                     // Recupere o valor do atributo "id" da sessão
-                     int idPai = (int)session.getAttribute("id");
+                    <img src="../images/Circle.png" id="sign_child" alt="" width="120" height="120">
+                    
+                    <%
+                        // Recupere o valor do atributo "id" da sessão
+                        int idPai = (int)session.getAttribute("id");
                      %>
-
-                     <!-- Exibindo o valor do atributo "id" na página -->
-                     <p><%= idPai %></p>
+                     
                     <div class="button">
-                        <button class="aboutMe"><a href="signup_child.jsp?id=<%= idPai %>">Cadastrar</a></button>
+                        <a href="signup_child.jsp?id=<%= idPai %>"><button class="aboutMe">Cadastrar</button></a>
                     </div>
+                    
                   </div>
                 </div>
         
@@ -358,6 +260,7 @@
       </div>
     </div>
   </div>
+                    
 
   <script>
     // main.js

@@ -90,6 +90,8 @@ public class FormServlet extends HttpServlet {
                    hs.setAttribute("telefone", telefone);
                    hs.setAttribute("estadoFamiliar", estadoFamiliar);
                    hs.setAttribute("dataNascimento", dataNascimento);
+                   
+                   
 
                    System.out.println("AAAAAAASD");
                    System.out.println(telefone);
@@ -97,8 +99,8 @@ public class FormServlet extends HttpServlet {
                     RequestDispatcher rd = request.getRequestDispatcher("../webPages/sucess.jsp");
                     rd.forward(request, response);
                 }
+                
                 response.sendRedirect("webPages/sucess.jsp");
-
 
             } catch (Exception e) {
                 logger.severe("Database error: " + e.getMessage());

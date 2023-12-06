@@ -85,6 +85,7 @@ public class NewServlet extends HttpServlet {
                                 logger.info("Cadastro realizado com sucesso.");
                                 System.out.println("Cadastro realizado com sucesso na tabela crianca.");
                                 System.out.println("Cadastro realizado com sucesso na tabela usuarios_crianca.");
+                                response.sendRedirect("webPages/sucess.jsp");
                             } else {
                                 logger.warning("Falha ao cadastrar na tabela usuarios_crianca.");
                                 System.out.println("Falha ao cadastrar na tabela usuarios_crianca.");

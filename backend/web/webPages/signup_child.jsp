@@ -35,10 +35,6 @@
                     String idPai = request.getParameter("id");
                 %>
 
-                <!-- Exibindo o valor do parâmetro "id" na página -->
-                <p>ID recebido: <%= idPai %></p>
-
-
                 <input name="id_pai" value=" <%= idPai %>" hidden>
                 <input type="text" required placeholder="Nome da Criança" name="nome_crianca" id="nome_crianca" size="255" maxlength="255">
                 <div class="flex-container">
