@@ -92,7 +92,6 @@
     st.setString(7, telefone);
     st.setString(8, senha);
     st.setString(9, estadoFamiliar); 
-    
     java.sql.Date sqlDate = java.sql.Date.valueOf(dataNascimento);
     st.setDate(10, sqlDate);
 

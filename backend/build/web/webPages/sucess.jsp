@@ -53,8 +53,8 @@
         </div>
 
         <h2><%= session.getAttribute("nome_completo")%></h2>
-        <p>Mãe</p>
-        <p>32 anos</p>
+        <p><%= session.getAttribute("estadoFamiliar") %></p>
+        <p><span id="idadeUsuario"></span> anos</p>
 
         <ul class="about">
           <li><span></span></li>
@@ -220,7 +220,7 @@
                     <img src="../images/Circle.png" id="sign_child" alt="" width="240" height="240">
         
                     <div class="button">
-                        <button class="aboutMe"><a href="signup-child.html">Cadastrar</a></button>
+                        <button class="aboutMe"><a href="signup_child.html">Cadastrar</a></button>
                     </div>
                   </div>
                 </div>
@@ -355,6 +355,22 @@
       showSection('criancas');
     };
   </script>
+  
+  <script>
+      window.onload = function () {
+          showSection('criancas');
+          calcularIdade();
+      };
+      
+      function calcularIdade() {
+          var dataNascimento = new Date('<%= session.getAttribute("dataNascimento") %>');
+          var hoje = new Date();
+          var diff = Math.abs(hoje - dataNascimento);
+          var idade = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+          document.getElementById('idadeUsuario').textContent = idade;
+      }
+  </script>
+
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="../scripts/script.js"></script>

@@ -74,6 +74,9 @@ public class FormServlet extends HttpServlet {
                    String cep = rs.getString("cep");
                    String cpfTrue = rs.getString("cpf");
                    String telefone = rs.getString("telefone");
+                   String estadoFamiliar = rs.getString("estado_familiar");
+                   String dataNascimento = rs.getString("data_nascimento");
+                   
                    HttpSession hs = request.getSession();
                    hs.setAttribute("cpf", cpf);
                    hs.setAttribute("senha", senha);
@@ -83,6 +86,8 @@ public class FormServlet extends HttpServlet {
                    hs.setAttribute("cep", cep);
                    hs.setAttribute("cpfTrue", cpfTrue);
                    hs.setAttribute("telefone", telefone);
+                   hs.setAttribute("estadoFamiliar", estadoFamiliar);
+                   hs.setAttribute("dataNascimento", dataNascimento);
 
                    System.out.println("AAAAAAASD");
                    System.out.println(telefone);
@@ -99,6 +104,7 @@ public class FormServlet extends HttpServlet {
 
    
             response.sendRedirect("webPages/sucess.jsp");
+            
 
     }
 }
